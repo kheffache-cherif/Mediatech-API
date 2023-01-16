@@ -28,8 +28,8 @@ public class ProduitController {
         return produitService.save(produitDto);
     }
 
-    @GetMapping("/ref/{ref}/")
-    public ProduitDto findByRef(@PathVariable("ref") String ref) {
+    @GetMapping("/ref/{ref_produit}/")
+    public ProduitDto findByRef(@PathVariable("ref_produit") String ref) {
         return produitService.findByRef(ref);
     }
     @DeleteMapping("/ref/{ref}")
