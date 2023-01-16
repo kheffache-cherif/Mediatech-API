@@ -20,6 +20,8 @@ public class ClientController {
      // injection du service dans le contoller
     // @Autowired pour l'injection du service dans le controller
 
+
+    // @Autowired
     private ClientService clientService;
 
     //ou faire une injection par constructeur

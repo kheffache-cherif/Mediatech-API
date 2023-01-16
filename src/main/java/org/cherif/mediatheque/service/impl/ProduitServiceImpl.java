@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.cherif.mediatheque.dao.ProduitDao;
 import org.cherif.mediatheque.dto.ProduitDto;
+import org.cherif.mediatheque.exceptions.EntityNotFoundException;
 import org.cherif.mediatheque.models.ProduitEntity;
 import org.cherif.mediatheque.service.facade.ProduitService;
 import org.modelmapper.ModelMapper;
@@ -74,9 +75,10 @@ public class ProduitServiceImpl implements ProduitService {
 
     @Override
     public ProduitDto findByRef(String ref) {
-        ProduitEntity produitEntity= produitDao.findByRef(ref).orElse(null);
+        ProduitEntity produitEntity= produitDao.findByRef(ref).orElseThrow(()->new EntityNotFoundException("produit not fond"));
         if(produitEntity==null) return  null;
         return modelMapper.map(produitEntity,ProduitDto.class);
+
     }
 
 

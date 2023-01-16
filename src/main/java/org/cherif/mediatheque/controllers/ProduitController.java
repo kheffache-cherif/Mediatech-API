@@ -28,21 +28,24 @@ public class ProduitController {
         return produitService.save(produitDto);
     }
 
-    @GetMapping("/ref/{ref_produit}/")
+    @RequestMapping(value = "/ref/{ref_produit}", method = RequestMethod.GET)
     public ProduitDto findByRef(@PathVariable("ref_produit") String ref) {
         return produitService.findByRef(ref);
     }
-    @DeleteMapping("/ref/{ref}")
+
+    @RequestMapping(value = "/ref/{ref}", method = RequestMethod.DELETE)
+
     public int delete(@PathVariable String ref) {
         return produitService.delete(ref);
     }
 
-    @PutMapping("/")
+    @RequestMapping(value = "/ref/{ref}", method = RequestMethod.PUT)
     public ProduitDto update(@Valid @RequestBody ProduitDto produitDto) {
             return produitService.update(produitDto);
     }
-    @DeleteMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<ProduitDto> findAll(){
+
         return produitService.findAll();
     }
 }
