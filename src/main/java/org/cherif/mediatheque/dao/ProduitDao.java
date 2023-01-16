@@ -22,5 +22,7 @@ public interface ProduitDao extends JpaRepository<ProduitEntity,Integer> {
 
     int deleteByRef(String ref);
 
+    List<ProduitEntity> findAll();
+
 
 }

@@ -3,6 +3,7 @@ package org.cherif.mediatheque.service.facade;
 import org.cherif.mediatheque.dao.ProduitDao;
 import org.cherif.mediatheque.dto.ProduitDto;
 
+import java.util.List;
 
 
 public interface ProduitService {
@@ -21,5 +22,5 @@ public interface ProduitService {
     ProduitDto findByRef(String ref);
 
 
-
+    List<ProduitDto> findAll();
 }

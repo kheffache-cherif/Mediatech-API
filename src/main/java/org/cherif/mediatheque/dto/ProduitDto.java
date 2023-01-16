@@ -14,9 +14,9 @@ import java.math.BigDecimal;
 
 public class ProduitDto {
 
-    @NotNull
+    @NotBlank
     private String ref;
-    @NotNull
+    @NotBlank
     private String libelle;
     @NotNull
     private BigDecimal prix;
